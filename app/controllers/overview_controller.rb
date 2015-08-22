@@ -9,6 +9,8 @@ class OverviewController < ApplicationController
     @companies = @internships.map(&:company)
     
     @pins = Gmaps4rails.build_markers(@companies) do |company, marker |
+      marker.lat company.latitude
+      marker.lng company.longitude
       marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a>")
     end
 

@@ -1,6 +1,18 @@
 
 <!-- GMAP -->
-    
+    <div class="map_container">
+    	<div id="map" class="gmaps4rails_map"></div>
+    </div>
+
+    <script type="text/javascript">  
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+          markers = handler.addMarkers(<%=raw @pins.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+
+    </script>
 
 <%= render 'partials/main_nav' %>
 
@@ -9,6 +21,6 @@
 <%= render 'partials/aboutus' %>
 
 <%= render 'partials/all_internship' %>
-
+<!--
 <%= render 'partials/contact' %>
-
+-->

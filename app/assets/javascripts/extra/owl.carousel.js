@@ -12,12 +12,7 @@
 /*global dragMove: false, dragEnd: false, $, jQuery, alert, window, document */
 /*jslint nomen: true, continue:true */
 
-console.log("OWL")
-
 if (typeof Object.create !== "function") {
-
-console.log("OWL2")
-
     Object.create = function (obj) {
         function F() {}
         F.prototype = obj;
@@ -25,8 +20,6 @@ console.log("OWL2")
     };
 }
 (function ($, window, document) {
-
-console.log("OWL3")
     
     var Carousel = {
         init : function (options, el) {

@@ -1,15 +1,4 @@
 <!-- header-img start -->
-<section id="hero-area">
-    <div class="map-shadow">
-        <div class="display_none display_nonet">
-      <div>
-        <div id="map"></div>
-      </div>
-   </div>
-
-
-    </div>
-</section>
 <!-- Header start -->
 
 <nav id="navigation">
@@ -83,16 +72,3 @@
         </div><!-- .row close -->
     </div><!-- .container close -->
 </nav><!-- header close -->
-    
-    <script type="text/javascript">
-
-
-  
-        handler = Gmaps.build('Google');
-        handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
-          markers = handler.addMarkers(<%=raw @pins.to_json %>);
-          handler.bounds.extendWith(markers);
-          handler.fitMapToBounds();
-        });
-
-      </script>

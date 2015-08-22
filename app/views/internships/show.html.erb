@@ -1,6 +1,17 @@
 <section id="map">
-   <%= gmaps(:map_options => { :container_class => "map-intern display_none display_nonet", :id => "map3", :draggable => false, :auto_zoom => false, :zoom => 15, :mapTypeControl => false,} , :markers => { "data" => @pins},) %>
-   <%= yield :scripts %>
+   <div class="map_container">
+      <div id="map3" class="map-intern display_none display_nonet"></div>
+    </div>
+
+    <script type="text/javascript">  
+        handler = Gmaps.build('Google');
+        handler.buildMap({ provider: {}, internal: {id: 'map3'}}, function(){
+          markers = handler.addMarkers(<%=raw @pins.to_json %>);
+          handler.bounds.extendWith(markers);
+          handler.fitMapToBounds();
+        });
+
+    </script>
 </section>
 
 <%= render 'partials/main_nav' %>
