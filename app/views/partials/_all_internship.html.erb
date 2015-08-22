@@ -1,0 +1,67 @@
+<!-- blog start -->
+<section id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block">
+                    <h1 class="heading">Latest <span>Entris</span> from the <span>Students</span></h1>
+                    <!-- blog filter -->
+                    <div class="controls">
+                        <label>Filter:</label>
+                      
+                        <button class="filter" data-filter="all">All</button>                       
+                        <label for="Countrys"> Countrys</label>
+                        <% @countries.each do |country| %>
+                            <button class="filter" data-filter=".<%= country.gsub(/\s+/, "") %>"><%= country %></button>
+                        <% end %>
+                        <br>
+                        <label for="Orientation">Orientation</label>
+                        <% @orientations.each do |ori| %>
+                            <button class="filter" data-filter=".<%= ori[0] %>"><%= ori[0] %></button>
+                        <% end %>
+                        <br>
+                        <label>Sort:</label>
+                        <button class="sort" data-sort="myorder:asc">Asc</button>
+                        <button class="sort" data-sort="myorder:desc">Desc</button>
+                    </div>
+                    <div id="Container" class="row">
+                        <% @internships.each do |internship| %>
+                            <%= link_to(internship) do %>
+                                <div class="mix col-md-6 <%= internship.orientation.name %> <%= internship.company.country.gsub(/\s+/, "") %> <%= internship.company.city.gsub(/\s+/, "") %>" data-myorder="<%= internship.updated_at %>">
+                                    <article>
+                                        <div style="display:inline-block;vertical-align:top;">
+                                            <figure>
+                                                <%= image_tag "orientations/slider-img-#{internship.orientation.name.downcase }.png", class:"img-responsive", alt: "" %>
+                                            </figure>
+                                        </div>
+                                        <div class="internshipDetail" style="display:inline-block;">
+                                        <header class="entry-header">
+                                            <h3 itemprop="name" class="entry-title">
+                                                <%= internship.title %>
+                                            </h3>
+                                            <h5><%= internship.company.city %><small>(<%= internship.company.country %>)</small></h5>
+                                        </header>
+                                        <div class="semester">
+                                            <p><%= internship.semester.name %></p>
+                                            <ul class="lang">
+                                                <li>Java</li>
+                                                <li>C#</li>
+                                                <li>Javascript</li>
+                                                <li>HTML/CSS</li>
+                                                <li>Visual Basic .NET</li>
+                                                <li> Delphi / Object Pascal</li>
+                                            </ul>
+                                        </div>
+                                        <%= render 'partials/raing_overview' %>
+                                    </div>
+                                    </article>
+                                </div>  
+                            <% end %>
+                        <% end %>
+                    </div>
+                    <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">ERWEITERTE SUCHE</a>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .containe close -->
+</section><!-- #blog close -->

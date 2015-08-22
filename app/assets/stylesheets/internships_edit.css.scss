@@ -1,0 +1,147 @@
+
+label{
+  font-size:17px
+}
+
+input{
+width:400px;
+padding:10px;
+margin-top:10px;
+margin-bottom:35px;
+border-radius:5px;
+border:1px solid #cbcbcb;
+box-shadow:inset 0 1px 2px rgba(0,0,0,0.18);
+font-size:16px
+}
+textarea{
+width:400px;
+height:100px;
+padding:10px;
+margin-top:10px;
+margin-bottom:35px;
+border-radius:5px;
+border:1px solid #cbcbcb;
+box-shadow:inset 0 1px 2px rgba(0,0,0,0.18);
+font-size:16px
+}
+input[type=submit]{
+background:linear-gradient(to bottom,#22abe9 5%,#36caf0 100%);
+box-shadow:inset 0 1px 0 0 #7bdcf4;
+border:1px solid #0F799E;
+color:#fff;
+font-size:19px;
+font-weight:700;
+cursor:pointer;
+text-shadow:0 1px 0 #13506D
+}
+input[type=submit]:hover{
+background:linear-gradient(to bottom,#36caf0 5%,#22abe9 100%)
+}
+
+#edit_intern{
+  margin-top: 70px;
+  margin-left: 0;
+  padding: 30px 5px 30px 50px;
+  background-color: #333
+}
+
+#interSpec{
+  float: left;
+  margin-right: 15%
+}
+
+
+.internRating{
+  padding-left: 40px;
+  margin-bottom: 50px
+}
+
+#internRating{
+  float: left;
+  margin-right: 15%
+}
+
+section.ratings label {
+  padding: 15px 0;
+}
+
+#internRating .edit-rating {
+  margin-left: 0 !important;
+}
+
+.rating_star {
+  background: url('images/star.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+}
+
+section.internRating{
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.one {
+  width: 200px;
+  height: 100px;
+}
+
+.one .edit-rating { margin-left: 0}
+
+section.comment {
+  clear: both;
+}
+
+#internship_description {
+  width: 90% !important;
+  height: 300px;
+}
+
+.attachment{ margin-left: 0}
+.editInternBtn{ margin-right: 50px}
+#internship_orientation_id_chzn, #internship_semester_id_chzn, #internship_programming_language_ids_chzn{ width: 414px !important}
+
+
+#triangle_right { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-left: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1007px;
+}
+
+
+
+#triangle_left { 
+  width: 0; 
+  height: 0; 
+  border-top: 20px solid #568501; 
+  border-right: 20px solid transparent; 
+  border-bottom: 20px solid #568501; 
+  position: absolute;
+  top: 177px;
+  margin-left: 1150px;
+}
+
+
+.on {
+  background-position: 0 16px;
+}
+
+
+
+.map-intern, #map3 { width: 100% !important; height: 450px}
+
+/**** Show ****/
+section.internship {
+  margin-left: 50px;
+}
+section.company article,
+section.ratings article {
+  margin-left: inherit;
+}
