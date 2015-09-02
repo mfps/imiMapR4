@@ -8,7 +8,7 @@ ActiveAdmin.register User do
     column :publicmail
     column :mailnotif
     column :email
-    default_actions
+    actions
   end
 
   form do |f|
@@ -21,7 +21,7 @@ ActiveAdmin.register User do
     f.input :password
     f.input :password_confirmation
     end
-    f.buttons
+    f.button :submit
 
   end
 

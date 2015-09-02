@@ -11,7 +11,7 @@ ActiveAdmin.register ReadingProf do
       end
       str.html_safe
     end
-    default_actions
+    actions
 	end
 
   show do |prof|

@@ -16,7 +16,7 @@ ActiveAdmin.register Internship do
     column :report_state
     column :certificate_state
     column :reading_prof
-    default_actions
+    actions
 
   end
 
