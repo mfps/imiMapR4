@@ -1,0 +1,31 @@
+<!-- Slider start -->
+<section id="slider">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="block wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <% if !@favorites.empty? %>
+                        <div class="title">
+                            <h3>Deine <span>Favorites</span></h3>
+                        </div>
+                        <div id="owl-example" class="owl-carousel">
+                            <% @favorites.each do |favs| %>
+                                <figure>
+                                    <%= image_tag "orientations/slider-img-#{favs.internship.orientation.name.downcase}.png", class:"img-responsive", alt: "" %>
+                                    <figcaption>
+                                        <h3><%= favs.internship.title %></h3>
+                                        <p><%= truncate(favs.internship.tasks, length: 25, seperator: " ") %></p>
+                                        <p><%= link_to "Read More", favs %></p>
+                                    </figcaption>
+                                </figure>
+                            <% end %>
+                        </div>
+                    <% else %>
+
+                    <% end %>
+                </div>
+            </div><!-- .col-md-12 close -->
+        </div><!-- .row close -->
+    </div><!-- .container close -->
+</section><!-- slider close -->
+<!-- about-us start -->

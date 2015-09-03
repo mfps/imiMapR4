@@ -1,8 +1,8 @@
 <%= render 'partials/second_nav' %>
 
 
-<article class="container">
-	<section class="favDrop">
+<article class="container content_drop">
+	<section class="text_guide">
 		<header>
 			<h2> <%= t "users.show.favorites_title" %> </h2>
 		</header>
@@ -14,20 +14,24 @@
 					<table class="table">
 						<tbody>
 							<% @favorites.each do |favorite| %>
-	  							<tr class="<%= cycle("even_row2", "odd_row2") %>">
-									<td><%= check_box_tag "favorite_ids[]", favorite.internship.id %></td>
+	  							<tr class="<%= cycle("even_row2", "odd_row2") %> fav_raw_click" data-href="<%= internships_path %>/<%= favorite.internship.id %>">
+	  								<%= link_to favorite.internship do %>
+									<!--<td><%= check_box_tag "favorite_ids[]", favorite.internship.id %></td>-->
 	    							<td><%= favorite.internship.title %></td>
 								    <td><%= favorite.internship.company.address %></td>
 								    <td><%= favorite.internship.orientation.name %></td>
 								    <td><%= favorite.internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-								    <td><%= link_to "", favorite.internship, class: "icon-white  icon-circle-arrow-right icon-2x button_intern" %></td>
-								    <td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "red-thumb icon-remove icon-2x button_intern" %></td>
+								    <% end %>
+								    <!--<td><%= link_to "", favorite.internship, class: "icon-3x fa fa-certificate button_intern" %></td>-->
+								    <td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-3x fa fa-times button_intern" %></td>
 	  							</tr>
 							<% end %>
 						</tbody>
 					</table>
 				</div>
-				<%= submit_tag (t "buttons.compare"), class: "btn btn-success" %>
+				<div class="simform__actions span1 offset7"> 
+					<!-- <%= submit_tag (t "buttons.compare"), class: "submit btn btn-success" %> -->
+				</div>
 			<% end %>
 			<div id="compareModal" class="modal hide fade span12" tabindex="-1" role="dialog" aria-labelledby="compareModalLabel" aria-hidden="true">
   				<div class="modal-header">
@@ -48,10 +52,8 @@
 			</div>
 		<% end %>
 	</section>
-	<br><br><br><br><br>
-	<br><br><br><br><br>
-	<br><br><br><br><br>
-	<br><br><br><br><br>
+	<br><br><br><br><br><br>
+	<br><br><br><br><br><br>
 </article>
 
 

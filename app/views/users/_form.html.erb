@@ -8,7 +8,7 @@
             <% end %>
          </ul>
       </div>
-  <% end %>
+   <% end %>
    <section class="changeEmail">
       <div class="row">
          <div class="span4">
@@ -16,20 +16,20 @@
                <%= f.label t "users.attributes.email" %><br />
                <%= f.text_field :email, class: "textlabel" %>
             </div>
-         </div>
+         </div>               
          <div class="span4">
             <div class="field" id="field-titles">
-               <%= f.label t "users.attributes.publicmail"  %>
+               <%= f.label t "users.attributes.publicmail", style:"width:100px;display:inline-block;background-color:red" %>
                <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">
                   <% if @user.publicmail %>
-                     <i id="recommend up" class="icon-thumbs-up green-thumb recommend-publicmail icon-2x"></i>
+                     <i id="recommend up" class="recommend-publicmail icon-3x fa fa-check"></i>
                   <% else %>
-                     <i id="recommend down" class="icon-thumbs-down red-thumb recommend-publicmail icon-2x"></i>
+                     <i id="recommend down" class="recommend-publicmail icon-3x fa fa-times"></i>
                   <% end %>
                </div>
                <%= f.hidden_field :publicmail, value: @user.publicmail ? 1 : 0 %>
             </div>    
-         </div>
+         </div>     
       </div>
    </section>
    <section class="changePassword">
@@ -45,9 +45,9 @@
                <%= f.label t "users.attributes.mailnotif"  %>
                <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">
                   <% if @user.mailnotif %>
-                     <i id="recommend up" class="icon-thumbs-up green-thumb recommend-mailnotif icon-2x"></i>
+                     <i id="recommend up" class="recommend-mailnotif icon-3x fa fa-check"></i>
                   <% else %>
-                     <i id="recommend down" class="icon-thumbs-down red-thumb recommend-mailnotif icon-2x"></i>
+                     <i id="recommend down" class="recommend-mailnotif icon-3x fa fa-times"></i>
                   <% end %>
                </div>
                <%= f.hidden_field :mailnotif, value: @user.mailnotif ? 1 : 0 %>
@@ -63,11 +63,13 @@
          </div>
       </div>
       <div class="row">
-         <div class="span1 offset7"> 
-            <div class="actions" style="float: right">
-               <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "btn btn-success" %>
+         <div class="simform__actions span1 offset7"> 
+            <div class="actions" style="float: left">
+               <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "submit btn btn-success" %>
             </div>
          </div>
       </div>
    </section>
+   <br><br><br><br>
+   <br><br><br><br>
 <% end %>

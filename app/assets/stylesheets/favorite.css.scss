@@ -9,3 +9,9 @@
 
 section.favDrop{ margin: 150px 0 0 50px}
 section.favContent{ margin-left: 50px }
+a.icon-3x.fa.fa-certificate{ color: gold}
+a:active.icon-3x.fa.fa-certificate { color: silver; font-size: 3em}
+a:active.icon-3x.fa.fa-certificate, a:focus.icon-3x.fa.fa-certificate { color: silver; font-size: 3em}
+a:active.icon-3x.fa.fa-times, a:focus.icon-3x.fa.fa-times { font-size: 3em}
+.odd_row2 { background-color: lightgray; }
+.fav_raw_click { cursor: pointer; }

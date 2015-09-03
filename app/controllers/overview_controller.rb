@@ -13,7 +13,7 @@ class OverviewController < ApplicationController
       marker.lng company.longitude
       marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a>")
     end
-
+    @favorites = current_user.favorites
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
     @semesters = @internships.map(&:semester)

@@ -1,93 +1,100 @@
 <%= render 'partials/second_nav' %>
 
 
-<section class="container">
-   <article class="profile">
-      <header>
-         <h2 class="user_titel">Profil</h2>
-      </header> 
-      <section>
-         <div class="row">
-            <div class="span4">
-               <div class="field" id="field-titles2">
-                  <b><%= t "users.attributes.first_name" %> :</b>
-                  <%= @user.student.first_name %>
-               </div>
-            </div>
-            <div class="span4">
-               <div class="field" id="field-titles2">
-                  <b><%= t "users.attributes.publicmail" %> :</b>
-                  <% if @user.publicmail %>
-                     <i class="icon-thumbs-up icon-2x green-thumb"></i>
-                  <% else %>
-                     <i class="icon-thumbs-down icon-2x red-thumb"></i>
-                  <% end %>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="span4">
-               <div class="field" id="field-titles2">
-                  <b><%= t "users.attributes.last_name" %> :</b>
-                  <%= @user.student.last_name %>
-               </div>
-            </div>
-            <div class="span4">
-               <div class="field" id="field-titles2">
-                  <b><%= t "users.attributes.mailnotif" %> :</b>
-                  <% if @user.mailnotif %>
-                     <i class="icon-thumbs-up icon-2x green-thumb"></i>
-                  <% else %>
-                     <i class="icon-thumbs-down icon-2x red-thumb"></i>
-                  <% end %>
-               </div>
-            </div>
-         </div>
-         <div class="row">
-            <div class="span4">
-               <div class="field" id="field-titles2">
-                  <b><%= t "users.attributes.email" %> :</b>
-                  <%= @user.email %>
-               </div>
-            </div>
-         </div>
-         <div class="row_margin_bottom">
-            <%= link_to " "+(t "buttons.edit"), edit_user_path(@user), class: "btn btn-success pull-right icon-white icon-edit icon-large" %>
-         </div>
-      </section>
-   </article>
-   <article class="intern">
-      <% if @internships.any? %>
+<section class="container content_drop">
+   <section class="text_guide">
+      <article class="profile">
          <header>
-            <h2> <%= t"internships.my" %> </h2>
-         </header>
+            <h2 class="user_titel">Profil</h2>
+         </header> 
          <section>
-            <% @internships.each do |internship| %>
-               <div class="row_margin_bottom">
-                  <%= "#{internship.title} #{t'helpers.at2'} #{internship.company.name}" %>
-                  <%= link_to " "+(t "buttons.edit"), edit_internship_path(internship), class: "pull-right btn btn-success icon-white icon-edit icon-large" %>
-                  <%= link_to " "+(t "buttons.show"), internship, class: "pull-right btn btn-success icon-white icon-circle-arrow-right icon-large" %>
-               </div> 
-            <% end %>
+            <div class="row">
+               <div class="span4">
+                  <div class="field" id="field-titles2">
+                     <b><%= t "users.attributes.first_name" %> :</b>
+                     <%= @user.student.first_name %>
+                  </div>
+               </div>
+               <div class="span4">
+                  <div class="field" id="field-titles2">
+                     <b><%= t "users.attributes.publicmail" %> :</b>
+                     <% if @user.publicmail %>
+                        <i class="icon-3x fa fa-check"></i>
+                     <% else %>
+                        <i class="icon-3x fa fa-times"></i>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="span4">
+                  <div class="field" id="field-titles2">
+                     <b><%= t "users.attributes.last_name" %> :</b>
+                     <%= @user.student.last_name %>
+                  </div>
+               </div>
+               <div class="span4">
+                  <div class="field" id="field-titles2">
+                     <b><%= t "users.attributes.mailnotif" %> :</b>
+                     <% if @user.mailnotif %>
+                        <i class="icon-3x fa fa-check"></i>
+                     <% else %>
+                        <i class="icon-3x fa fa-times"></i>
+                     <% end %>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="span4">
+                  <div class="field" id="field-titles2">
+                     <b><%= t "users.attributes.email" %> :</b>
+                     <%= @user.email %>
+                  </div>
+               </div>
+            </div>
+            <div class="row_margin_bottom">
+               <%= link_to " "+(t "buttons.edit"), edit_user_path(@user), class: "btn btn-success pull-right icon-white icon-edit icon-large" %>
+            </div>
          </section>
-      <% end %>
-   </article>
-   <article class="comments">
-      <% if @comments.any? %>
-         <header>
-            <h2> <%= t"internships.attributes.comments" %> </h2>
-         </header>
-         <section>
-            <% @comments.each do |comment| %>
-               <p> "
-                  <%= comment.body %>
-                  " <%= t"helpers.at2" %>
-                  <%= link_to "#{comment.internship.title} at #{comment.internship.company.name}", comment.internship, class: "btn btn-success" %>
-               </p>
-            <% end %>
-         </div>
-      
-         </section>
-      <% end %>
-   </article>
+      </article>
+      <article class="intern">
+         <% if @internships.any? %>
+            <header>
+               <h2> <%= t"internships.my" %> </h2>
+            </header>
+            <section>
+               <% @internships.each do |internship| %>
+                  <div class="row_margin_bottom">
+                     <%= link_to internship do %>
+                     <%= "#{internship.title} #{t'helpers.at2'} #{internship.company.name}" %>
+                     <% end %>
+                     <%= link_to " "+(t "buttons.edit"), edit_internship_path(internship), class: "pull-right btn btn-success icon-white icon-edit icon-large" %>
+                  </div> 
+               <% end %>
+            </section>
+         <% end %>
+      </article>
+      <article class="comments">
+         <% if @comments.any? %>
+            <header>
+               <h2> <%= t"internships.attributes.comments" %> </h2>
+            </header>
+            <section>
+               <% @comments.each do |comment| %>
+                  <p class="<%= cycle("even_row2", "odd_row2") %>" >
+                     <%= link_to comment.internship do %>
+                        "<%= truncate(comment.body, length: 50, seperator: ' ') %>"
+                        <%= t"helpers.at2" %>
+                        <%= comment.internship.title %> at <%= comment.internship.company.name %>
+                     <% end %>
+                  </p>
+               <% end %>
+            </div>
+         
+            </section>
+         <% end %>
+      </article>
+   </section>
+   <br><br><br><br>
+   <br><br><br><br>
 </section>

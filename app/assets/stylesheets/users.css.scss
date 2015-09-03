@@ -19,6 +19,12 @@
   margin-bottom: 25px;
 }
 
+input.submit.btn.btn-success { width: 250px}
+.icon-3x.fa.fa-check{ color: green}
+.icon-3x.fa.fa-times{ color: red}
+.simform__actions { padding: 0}
+.offset7 { margin-left: 220px; }
+
 #form-block2 {
   background-color: #333333;
   color: #FFFFFF;
@@ -89,6 +95,7 @@
 #field-titles2 {
   line-height:17px; 
   margin-bottom:15px;
+  width: 350px;
 }
 
 article.profile, section.changeUser{ margin-top: 150px }

@@ -61,41 +61,41 @@ $(window).load(function () {
 });
 
 $(document).ready(function() {
-     $("#hide_all").click(function () {
-     $(".answer").slideToggle("slow");
-     $(".comment").slideToggle("slow");
-     $(".answer_2").slideToggle("slow");
-     $("#comment_form").slideToggle("slow");
+
+  // make the whole fav table row klickable
+  $(".fav_raw_click").click(function(){
+    window.document.location = $(this).data("href");
   });
-     $(".info_signup").hide();
-     $(".icon-info-sign").mouseover(function(){
-       $("#popup").fadeIn("slow");
-     });
-     $(".icon-info-sign").mouseleave(function(){
-       $("#popup").fadeOut("slow");
-     });
+
+    $("#hide_all").click(function () {
+       $(".answer").slideToggle("slow");
+       $(".comment").slideToggle("slow");
+       $(".answer_2").slideToggle("slow");
+       $("#comment_form").slideToggle("slow");
+    });
+    $(".info_signup").hide();
+    $(".icon-info-sign").mouseover(function(){
+      $("#popup").fadeIn("slow");
+    });
+    $(".icon-info-sign").mouseleave(function(){
+      $("#popup").fadeOut("slow");
+    });
 
   $(".recommend-edit").click(function() {
-      $(this).toggleClass( "icon-thumbs-up" );
-      $(this).toggleClass( "green-thumb" );
-      $(this).toggleClass( "icon-thumbs-down" );
-      $(this).toggleClass( "red-thumb" );
+      $(this).toggleClass( "fa fa-check" );
+      $(this).toggleClass( "fa fa-times" );
       toggle_value("#internship_recommend");
   });
 
   $(".recommend-publicmail").click(function() {
-      $(this).toggleClass( "icon-thumbs-up" );
-      $(this).toggleClass( "green-thumb" );
-      $(this).toggleClass( "icon-thumbs-down" );
-      $(this).toggleClass( "red-thumb" );
+      $(this).toggleClass( "fa fa-check" );
+      $(this).toggleClass( "fa fa-times" );
       toggle_value("#user_publicmail");
   });
 
   $(".recommend-mailnotif").click(function() {
-      $(this).toggleClass( "icon-thumbs-up" );
-      $(this).toggleClass( "green-thumb" );
-      $(this).toggleClass( "icon-thumbs-down" );
-      $(this).toggleClass( "red-thumb" );
+      $(this).toggleClass( "fa fa-check" );
+      $(this).toggleClass( "fa fa-times" );
       toggle_value("#user_mailnotif");
   });
   
