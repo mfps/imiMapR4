@@ -10,15 +10,12 @@
                         </div>
                         <div id="owl-example" class="owl-carousel">
                             <% @favorites.each do |favs| %>
-
-<%= debug favs %>
-
                                 <figure>
                                     <%= image_tag "orientations/slider-img-#{favs.internship.orientation.name.downcase}.png", class:"img-responsive", alt: "" %>
                                     <figcaption>
                                         <h3><%= favs.internship.title %></h3>
                                         <p><%= truncate(favs.internship.tasks, length: 25, seperator: " ") %></p>
-                                        <p><%= link_to "Read More", "#{internships_path}/{favs.id}" %></p>
+                                        <p><%= link_to "Read More", "#{internships_path}/#{favs.internship_id}" %></p>
                                     </figcaption>
                                 </figure>
                             <% end %>
