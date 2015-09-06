@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130711142625) do
+ActiveRecord::Schema.define(version: 20150904210701) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "resource_id",   null: false
@@ -45,6 +45,28 @@ ActiveRecord::Schema.define(version: 20130711142625) do
 
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+
+  create_table "advanced_searches", force: :cascade do |t|
+    t.float    "working_hours"
+    t.float    "living_costs"
+    t.float    "internship_rating"
+    t.string   "company"
+    t.string   "user"
+    t.string   "title"
+    t.string   "orientation"
+    t.string   "description"
+    t.string   "semster"
+    t.float    "salary"
+    t.string   "tasks"
+    t.string   "programming_lang"
+    t.string   "language"
+    t.float    "lernerfolg"
+    t.float    "atmosphaere"
+    t.float    "betreuung"
+    t.float    "wertschaetzung"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
+  end
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -282,6 +304,29 @@ ActiveRecord::Schema.define(version: 20130711142625) do
     t.string   "name_de"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "searchings", force: :cascade do |t|
+    t.float    "working_hours"
+    t.float    "internship_rating"
+    t.string   "company"
+    t.string   "user_string"
+    t.string   "title"
+    t.string   "orientation"
+    t.string   "description"
+    t.string   "semester"
+    t.float    "salery"
+    t.string   "tasks"
+    t.string   "language"
+    t.float    "trainingsuccess"
+    t.float    "atmosphere"
+    t.float    "supervision"
+    t.float    "appreciation"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "countries"
+    t.string   "programming_languages"
+    t.float    "livingcoast"
   end
 
   create_table "semesters", force: :cascade do |t|

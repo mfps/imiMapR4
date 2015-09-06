@@ -136,6 +136,28 @@ de:
     save: "Speichern" 
     done_intership_here: "Hast du auch dein Praktikum hier gemacht?"
     compare: "Vergleichen"
+  advsearch:
+    global: "GLOBAL"
+    specifics: "SPEZIFISCH"
+    money: "FINANZEN"
+    ratings: "BEWERTUNGEN"
+    title: "TITLE"
+    company: "UNTERNEMEN"
+    description: "BESCHREIBUNG"
+    tasks: "AUFGABEN"
+    language: "LANDESSPRACHE"
+    user: "BENUTZER NAME"
+    working_hours: "ARBEITSSTUNDEN"
+    orientation: "ORIENTIERUNG"
+    programming_languages: "PROGRAMIERSPRACHEN"
+    sem: "SEMESTER"
+    salery: "GEHALT"
+    livingcost: "Lebenshaltungskosten"
+    trainingsuccess: "LERNERFOLG"
+    atmosphere: "Atmosphäre"
+    supervision: "Betreuung"
+    appreciation: "Wertschätzung"
+
 
   helpers:
     reset: "Reset"

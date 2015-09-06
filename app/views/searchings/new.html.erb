@@ -1,0 +1,133 @@
+<%= render 'partials/second_nav' %>
+
+<section class="container content_drop search">
+	<%= form_for @search, html: {class:"pure-form"} do |s| %>
+		<section class="col-1">
+        	<head>
+				<h3><%= t "advsearch.global" %></h3>
+			</head>
+		</section>
+		<div class="col-1">
+			<%= s.label (:countries) do %>
+				<%= t "advsearch.countries" %><br>
+				<%= s.select :countries, options_for_select(@countries), :include_blank => true %>
+			<% end %>
+		</div>
+		<div class="col-2">
+			<%= s.label (:title) do %>
+				<%= t "advsearch.title" %><br>
+				<%= s.text_field :title%>
+			<% end %>
+		</div>
+		<div class="col-2">
+			<%= s.label (:company) do %>
+				<%= t "advsearch.company" %><br>
+				<%= s.text_field :company %>
+			<% end %>
+		</div>
+		<section class="col-1">
+         	<head>
+				<h3><%= t "advsearch.specifics" %></h3>
+			</head>
+		</section>
+  		<div class="col-2">	
+			<%= s.label (:description) do %>
+				<%= t "advsearch.description" %><br>
+				<%= s.text_field :description %>
+			<% end %>
+		</div>
+		<div class="col-2">	
+			<%= s.label :tasks do %>
+				<%= t "advsearch.tasks" %><br>
+				<%= s.text_field :tasks %>
+			<% end %>
+		</div>
+		<div class="col-3">
+			<%= s.label (:language) do %>
+				<%= t "advsearch.language" %><br>
+				<%= s.text_field :language %>
+			<% end %>
+		</div>
+		<div class="col-3">
+			<%= s.label (:user_string) do %>
+				<%= t "advsearch.user" %><br>
+				<%= s.text_field :user_string %>
+			<% end %>
+		</div>
+		<div class="col-3">
+			<%= s.label (:working_hours) do %>
+				<%= t("advsearch.working_hours") + " / " + t("unit.week") %><br>
+				<%= s.text_field :working_hours %>
+			<% end %>
+		</div>
+		<div class="col-3">
+    		<%= s.label (:orientation) do %>
+    			<%= t "advsearch.orientation" %><br>
+				<%= s.select :orientation, options_for_select(@orientations), :include_blank => true  %>
+			<% end %>
+  		</div>
+		<div class="col-3">	
+			<%= s.label (:programming_languages) do %>
+				<%= t "advsearch.programming_languages" %><br>
+				<%= s.select :programming_languages, options_for_select(@programming_languages), :include_blank => true %>
+			<% end %>
+  		</div>
+		<div class="col-3">
+			<%= s.label (:semester) do %>
+				<%= t "advsearch.semester" %><br>
+				<%= s.select :semester, options_for_select(@semesters), :include_blank => true %>
+			<% end %>
+		</div>
+  		<section class="col-1">
+        	<head>
+  				<h3><%= t "advsearch.money" %></h3>
+  			</head>
+  		</section>
+		<div class="col-2">
+			<%= s.label (:salery) do %>
+				<%= t("advsearch.salery") + " € / " + t("unit.month")  %><br>
+				<output name="salery" id="salery" for="rangeInputSalery">0</output><br>
+				<%= s.range_field :salery, :min=>0, :max=>@salary_max, :class=>"slide", :id=>"rangeInputSalery", :oninput=>"salery.value=rangeInputSalery.value",:name=>"rangeInputSalery", :value=>"0"%>
+			<% end %>
+		</div>
+		<div class="col-2">
+			<%= s.label (:livingcoast) do %>
+				<%= t("advsearch.livingcost") + " € / " + t("unit.month")  %><br>
+				<output name="livingcoast" id="livingcoast" for="rangeInputLiving_costs_max">0</output><br>
+				<%= s.range_field :livingcoast, :min=>0, :max=>@living_costs_max, :class=>"slide", :id=>"rangeInputLiving_costs_max", :oninput=>"livingcoast.value=rangeInputLiving_costs_max.value",:name=>"rangeInputLiving_costs_max", :value=>"0"%>
+			<% end %>
+		</div>
+		<section class="col-1">
+        	<head>
+				<h3><%= t "advsearch.ratings" %></h3>
+			</head>
+		</section>
+		<div class="col-4">
+			<%= s.label (:trainingsuccess) do %>
+				<%= t "advsearch.trainingsuccess" %><br>
+				<%= s.select :trainingsuccess, %w[1 2 3 4 5],:include_blank => true %>
+			<% end %>
+		</div>
+		<div class="col-4">
+			<%= s.label (:atmosphere) do %>
+				<%= t "advsearch.atmosphere" %><br>
+				<%= s.select :atmosphere, %w[1 2 3 4 5],:include_blank => true %>
+			<% end %>
+		</div>
+		<div class="col-4">
+			<%= s.label (:supervision) do %>
+				<%= t "advsearch.supervision" %><br>
+				<%= s.select :supervision, %w[1 2 3 4 5],:include_blank => true %>
+			<% end %>
+		</div>
+		<div class="col-4">
+			<%= s.label (:appreciation) do %>
+				<%= t "advsearch.appreciation" %><br>
+				<%= s.select :appreciation, %w[1 2 3 4 5],:include_blank => true %>
+			<% end %>
+		</div>
+		<div class="action">
+			<%= s.submit t("search.button"), :name=>"submit", class: "btn btn-success searchbtn" %>
+  		</div>
+	<% end %>
+</section>
