@@ -79,9 +79,11 @@ class InternshipsController < ApplicationController
 
     @user_comments = @internship.user_comments.order("created_at DESC")
 
-    @pins = Gmaps4rails.build_markers(@internship.company) do |company, marker |
+    @pins = Gmaps4rails.build_markers(@company) do |company, marker |
+      marker.lat company.latitude
+      marker.lng company.longitude
       marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a> width #{company.number_employees}")
-    end     
+    end  
 
     respond_with(@internship)
   end

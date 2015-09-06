@@ -1,4 +1,4 @@
-
+/*
 label{
   font-size:17px
 }
@@ -136,7 +136,7 @@ section.comment {
 
 
 .map-intern, #map3 { width: 100% !important; height: 450px}
-
+*/
 /**** Show ****/
 section.internship {
   margin-left: 50px;
@@ -144,4 +144,110 @@ section.internship {
 section.company article,
 section.ratings article {
   margin-left: inherit;
+}
+
+.internedit > form {
+  display: block;
+  margin: 30px;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  font-size: 0;
+  width: 102.5%;
+}
+ 
+.internedit > form > div > label {
+  display: block;
+  padding: 20px 20px 10px;
+  vertical-align: top;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #939393;
+  cursor: pointer;
+}
+.internedit > form > div.switch > label {
+  padding: 16px 20px 13px;
+}
+ 
+.col-2, .col-3, .col-4 { 
+  border-bottom: 1px solid #e4e4e4;
+}
+ 
+.internedit > form > div > .col-4 {
+  height: 86px;
+}
+ 
+.internedit > label > input {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 27px;
+  line-height: 27px;
+  margin: 5px -5px 0;
+  padding: 7px 5px 3px;
+  border: none;
+  outline: none;
+  color: #555;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: .6;
+  transition: all linear .3s;
+}
+
+select#internship_company_id{ width: 88% }
+section.internedit select { border-bottom: 1px solid lightgray }
+textarea#internship_description, input#internship_working_hours { width: 90% }
+.col-submit {
+  text-align: center;
+  padding: 20px;
+}
+ 
+.internedit > label > select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  color: #555;
+  margin: 16px 0 6px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  opacity: .4;
+  transition: all linear .3s;
+}
+ 
+.internedit > label > input:focus, label > select:focus { opacity: 1 }
+
+.internedit .edit-rating { margin-left: 0; margin-top: 10px; padding-bottom: 20px }
+
+input.btn.btn-success.saveinternship {
+    background-color: green !important;
+    font-size: 15px;
+    background-image: none;
+    border: none;
+    border-radius: 0;
+    width: 95%;
+    height: 35px;
+    margin: 20px 0 20px;
+}
+input.btn.btn-success.saveinternship:active{
+    background-color: lightgreen !important;
+}
+.action { width: 100% }
+@media(min-width: 850px){
+  .internedit > form > div { display: inline-block; }
+  .col-submit { display: block; }
+ 
+  .col-1, .col-2, .col-3, .col-4 { box-shadow: 1px 1px #e4e4e4; border: none; }
+  
+  .col-1 { width: 100% }
+  .col-2 { width: 50% }
+  .col-3 { width: 33.3333333333% }
+  .col-4 { width: 25% }
+ 
+  .col-submit button { width: 30%; margin: 0 auto; }
 }

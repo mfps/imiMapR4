@@ -1,0 +1,13 @@
+<%= render 'partials/second_nav' %>
+
+<%= if @search.search_internships.empty? %>
+
+	<p>NOPE</p>
+
+<% else %>
+	
+	<%= @search.search_internships.each do |c| %>
+
+		<p>c.title</p>
+
+<% end %>

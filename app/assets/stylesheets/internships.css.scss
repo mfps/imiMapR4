@@ -1,9 +1,200 @@
 // Place all the styles related to the Internships controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-/*
-@import 'font-awesome';
 
+@import 'font-awesome';
+/*
+section.notivication {
+    position: relative;
+    margin-top: -74px;
+    background-color: lightgreen;
+    width: 100%;
+    text-align: center;
+    z-index: 999999;
+    height: 30px;
+    padding-top: 10px;
+}
+*/
+section.notivication p#notice {
+    font-size: 2em;
+    color: aqua !important;
+}
+.content_drop.internshow { margin-top: 75px }
+.rating {
+  margin: auto 0;
+}
+
+.rating_star {
+  background: url('images/star.png') 0 0;
+  width: 16px;
+  height: 16px;
+  display: block;
+  float: left;
+}
+.rating{
+  width: 80px;
+}
+
+.on {
+  background-position: 0 16px;
+}
+.col-1.map { padding-left: 0 }
+#map3 { width: 100%; height: 250px; margin-left: 0 }
+.interncontent { color: black; padding: 5px 0 0 10px }
+section#showintern label { display: block; text-align: center }
+.av_rate > label { text-align: center }
+.ratingStars { margin-left: 43%; margin-bottom: 20px; }
+.ratingStarsTask, .ratingStarsLearn { margin-left: 40%; margin-bottom: 20px; }
+.ratingStarsAtmo, .ratingStarsSuperV, .ratingStarsAppre { margin-left: 35%; margin-bottom: 20px; }
+.interncontent.desc {
+  font-weight: 300;
+  width: 90%;
+  text-align: justify;
+  line-height: 25px;
+}
+
+/*** COMMENTS **/
+
+.comment{ font-size: 12px}
+.comment a { color: black !important; padding-bottom: 0 }
+.comment a:hover { color: red !important; padding-bottom: 0; background-color: white }
+.answer a { color: white !important; padding-bottom: 0 }
+.answer a:hover { color: red !important; padding-bottom: 0; background-color: #e4e4e4 }
+#user {
+    background-color: lightblue;
+    padding: 5px 10px;
+    margin-bottom: -14px;
+    width: 90%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom: 1px solid lightgray;
+}
+#sentence {
+    background-color: #fff;
+    padding: 20px 10px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    width: 90%;
+    margin: -20px 0 -15px;
+}
+div#user_2 {
+    font-size: 12px;
+    background-color: #e4e4e4;
+    border-bottom: 1px solid lightgray;
+    width: 90%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 5px 10px;
+}
+#sentence_2 {
+    font-size: 12px;
+    background-color: #e4e4e4;
+    border-radius: 5px;
+    padding: 20px 10px;
+    width: 90%;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+#answer_field label { margin-top: 10px; margin-left: -47% }
+.answer { margin-left: 20px }
+form.new_user_comment label { margin-left: -44% }
+.actions.save_button, .actions.summitNewComment { margin-top: -4px; float: right }
+.save_button .btn.btn-success { margin-left: -66% }
+.summitNewComment .btn.btn-success { margin-left: -64% }
+input#answer_body, input#user_comment_body { width: 70% }
+.actions .summitNewComment { float: right }
+h2.intern-head { z-index: 99; position: absolute; color: rgba(1,1,1, 0.8) !important; font-size: 50px }
+.col-2.favbtn a.btn.btn-danger { margin-left: 30px }
+.col-1.favbtn a.btn.btn-danger, .col-1.commentBtn .btn.btn-success{ width: 92% }
+section#showintern {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #e4e4e4;
+  border-radius: 5px;
+  font-size: 0px;
+  width: 102.5%;
+}
+ 
+section#showintern > div > label {
+  display: block;
+  padding: 20px 20px 10px;
+  vertical-align: top;
+  font-size: 13px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #939393;
+  cursor: pointer;
+}
+section#showintern > div.switch > label {
+  padding: 16px 20px 13px;
+}
+ 
+.col-2, .col-3, .col-4 { 
+  border-bottom: 1px solid #e4e4e4;
+}
+ 
+section#showintern > div > .col-4 {
+  height: 86px;
+}
+ 
+label > input {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 27px;
+  line-height: 27px;
+  margin: 5px -5px 0;
+  padding: 7px 5px 3px;
+  border: none;
+  outline: none;
+  color: #555;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-weight: bold;
+  font-size: 14px;
+  opacity: .6;
+  transition: all linear .3s;
+}
+ 
+.col-submit {
+  text-align: center;
+  padding: 20px;
+}
+ 
+label > select {
+  display: block;
+  width: 100%;
+  padding: 0;
+  color: #555;
+  margin: 16px 0 6px;
+  font-weight: 500;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 14px;
+  opacity: .4;
+  transition: all linear .3s;
+}
+ 
+label > input:focus, label > select:focus {
+  opacity: 1;
+}
+
+@media(min-width: 850px){
+  section#showintern > div { display: inline-block; }
+  .col-submit { display: block; }
+ 
+  .col-2, .col-3, .col-4 { box-shadow: 1px 1px #e4e4e4; border: none; }
+  
+  .col-2 { width: 50% }
+  .col-3 { width: 33.3333333333% }
+  .col-4 { width: 25% }
+ 
+  .col-submit button { width: 30%; margin: 0 auto; }
+}
+
+/*
 #intern-title {
     color: #333333;
     font-size: 19px;
@@ -83,19 +274,11 @@ h2 {
   float: left;
 }
 
-#comment_form {
-  margin-bottom:10px;
-}
 
 .on {
   background-position: 0 16px;
 }
 
-.comment{
-  background: #dddddf;
-  padding: 5px;
-  border-radius: 0px 0px 0px 0px;
-}
 
 .answer{
   background: #dddddf;
@@ -120,67 +303,9 @@ h2 {
   margin-right: 0px;
 }
 
-#user{
-  font-weight: bold;
-  background: #77b900;
-  border-radius: 5px 5px 5px 5px;
-  margin: -10px;
-  padding: 10px;
-  color: white;
-}
 
-#user_2{
-  background: #bbe175;
-  margin: -5px;
-  padding: 5px 10px 5px 10px;
-  color: black;
-}
 
-#user_3{
-  font-weight: bold;
-  background: #bbe175;
-  margin: -5px;
-  padding: 5px 10px 5px 10px;
-  color: black;
-  margin-top: -25px;
-}
 
-#sentence{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 0;
-  margin-top: -20px;
-  margin-bottom: -15px;
-}
-
-#sentence a {
-  margin-top:10px;
-}
-
-#sentence_2{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 0;
-  margin-top: -25px;
-  margin-bottom: -15px;
-}
-
-#sentence_3{
-  background-color: #fff;
-  border-radius: 5px;
-  padding-top: 15px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 0;
-  margin-top: 15px;
-  margin-bottom: 5px;
-}
 
 .label{
   margin-top: 10px;
@@ -228,10 +353,6 @@ h2 {
 
 .living_costs{
   width: 100px;
-}
-
-.rating{
-  width: 80px;
 }
 
 .recommend{
@@ -321,5 +442,4 @@ h2 {
   line-height:1px; 
   margin-bottom:15px;
 }
-
 */

@@ -1,11 +1,13 @@
 <fieldset>
-    <%= f.label :description %><br />
-    <%= f.text_field :description %>
-    <%= f.label :file %><br />
-    <% if !f.object.file.to_s.empty? %>
-      <%= image_tag f.object.file %>
-    <% else %>
-    <%= f.file_field :file %>
+    <%= f.label :description do %><br />
+        <%= f.text_field :description %>
+    <% end %>
+    <%= f.label :file do %><br />
+        <% if !f.object.file.to_s.empty? %>
+            <%= image_tag f.object.file %>
+        <% else %>
+            <%= f.file_field :file %>
+        <% end %>
     <% end %>
     <br/>
     <%= f.hidden_field :_destroy %>

@@ -14,6 +14,8 @@ ImiMaps::Application.routes.draw do
 
     resources :search, :only => [:index]
 
+    resources :searchings
+
     resources :overview, :only => [:index]
 
     resources :internship_offer, :only => [:index, :show]

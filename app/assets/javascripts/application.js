@@ -43,6 +43,10 @@ $(window).load(function () {
       setValue(val, id);
     });
 
+
+//    $(".notivication").fadeOut("4000")
+
+
   var setStars = function(val, id) {
     stars = $("#"+id+" .rating_star");
     $(stars).each(function(){
