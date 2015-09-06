@@ -1,4 +1,5 @@
 ActiveAdmin.register ProgrammingLanguage do
+  menu parent: "Backoffice"
   config.sort_order = "id_asc"
   filter :name
   

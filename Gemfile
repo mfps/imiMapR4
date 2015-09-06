@@ -21,6 +21,8 @@ gem 'chosen-rails'
 
 gem 'kaminari'
 
+
+gem 'chartkick', '~> 1.4.0'
 gem "d3-rails"
 gem "net-ldap"
 

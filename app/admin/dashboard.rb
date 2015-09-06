@@ -10,6 +10,46 @@ ActiveAdmin.register_page "Dashboard" do
       end
     end
 
+  columns do
+    column do
+      panel "Countrys" do
+        render 'partials/adminCharts/map_chart'
+        render 'partials/adminCharts/pie_chart_countries'
+      end
+    end
+  end
+  columns do
+    column do
+      panel "Orientation" do
+        render 'partials/adminCharts/pie_chart'
+      end
+    end
+    column do
+      panel "Semesters" do
+        render 'partials/adminCharts/line_chart_semester'
+      end
+    end
+  end
+  columns do
+    column do
+      panel "Reading Profs" do
+        render 'partials/adminCharts/pie_chart_profs'
+      end
+    end
+    column do
+      panel "Report State" do
+        render 'partials/adminCharts/pie_chart_reportstate'
+      end
+    end
+    column do
+      panel "Certificate State" do
+        render 'partials/adminCharts/pie_chart_certificatestate'
+      end
+    end
+  end
+
+
+
      columns do
        column do
          panel "Recent Internships" do

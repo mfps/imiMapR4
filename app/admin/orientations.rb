@@ -1,4 +1,5 @@
 ActiveAdmin.register Orientation do
+  menu parent: "Backoffice"
   filter :name
 
 	index do

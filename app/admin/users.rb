@@ -1,4 +1,5 @@
 ActiveAdmin.register User do
+  menu parent: "User"
   filter :student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel"
 
   index do

@@ -1,4 +1,5 @@
 ActiveAdmin.register ReadingProf do
+  menu parent: "Backoffice"
   filter :name
 	
 	index do

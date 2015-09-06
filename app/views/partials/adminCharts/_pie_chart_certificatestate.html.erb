@@ -1,0 +1,1 @@
+<%= pie_chart Internship.includes(:certificate_state).map(&:certificate_state).map(&:name).group_by{|i| i}.map{|k,v| [k, v.count] } %>

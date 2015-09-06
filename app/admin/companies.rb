@@ -1,4 +1,5 @@
 ActiveAdmin.register Company do
+  menu parent: "Companys"
     filter :internships_student_enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel"
     filter :name
     filter :city

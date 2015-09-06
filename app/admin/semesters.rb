@@ -1,4 +1,5 @@
 ActiveAdmin.register Semester do
+  menu parent: "Backoffice"
   filter :name
 
 	index do

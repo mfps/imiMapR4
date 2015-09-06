@@ -1,0 +1,1 @@
+<%= column_chart Internship.includes(:semester).map(&:semester).map(&:name).group_by{|i| i}.map{|k,v| [k, v.count] } %>

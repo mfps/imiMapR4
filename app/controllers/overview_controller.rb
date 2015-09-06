@@ -27,14 +27,19 @@ class OverviewController < ApplicationController
 
     @countries = @companies.map(&:country).compact.uniq
 
+
+    @counts = @companies.map(&:country).group_by{|i| i}.map{|k,v| [k, v.count] }
+
+    @test = 
+
     @data_country = []
     @countries.each do |x|
-      @data_country << {:name=>x, :count=>@countries.count(x)}
+      @data_country << {:name=>x, :count=>@countries.map.count(x)}
     end
 
+    @countrylist = [["United States", 1],["Australia", 2], ["Egypt", 1], ["South Africa", 1],["Switzerland", 1]]
 
-
-
+    
     @data_language = []
     @programming_languages.each do |x|
       s = x.try(:internships).try(:size)
@@ -43,6 +48,7 @@ class OverviewController < ApplicationController
       end
     end
 
+    
 
     @data_orientation = []
     @orientations_ary.each do |x|
@@ -54,4 +60,6 @@ class OverviewController < ApplicationController
       format.js
     end
   end
+
+
 end
