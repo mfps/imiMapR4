@@ -1,0 +1,1 @@
+<%= pie_chart Internship.includes(:programming_languages).map(&:programming_languages).map(&:name).group_by{|i| i}.map{|k,v| [k, v.count] } %>

@@ -23,13 +23,21 @@ ActiveAdmin.register_page "Dashboard" do
       panel "Orientation" do
         render 'partials/adminCharts/pie_chart'
       end
+    end 
+=begin
+    column do
+      panel "Programming Languages" do
+        render 'partials/adminCharts/pie_chart_programming_lang'
+      end
     end
+=end
     column do
       panel "Semesters" do
         render 'partials/adminCharts/line_chart_semester'
       end
     end
   end
+
   columns do
     column do
       panel "Reading Profs" do

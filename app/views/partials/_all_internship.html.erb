@@ -44,12 +44,9 @@
                                         <div class="semester">
                                             <p><%= internship.semester.name %></p>
                                             <ul class="lang">
-                                                <li>Java</li>
-                                                <li>C#</li>
-                                                <li>Javascript</li>
-                                                <li>HTML/CSS</li>
-                                                <li>Visual Basic .NET</li>
-                                                <li> Delphi / Object Pascal</li>
+                                                <% internship.programming_languages.map{ |n| n.name }.each do |proLang| %>
+                                                    <li><%= proLang %></li>
+                                                <% end %>
                                             </ul>
                                         </div>
                                         <%= render 'partials/raing_overview' %>
