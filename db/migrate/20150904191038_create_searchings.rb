@@ -16,6 +16,11 @@ class CreateSearchings < ActiveRecord::Migration
       t.float :atmosphere
       t.float :supervision
       t.float :appreciation
+      t.string :countries
+      t.string :programming_languages
+      t.float :livingcoast
+  end
+
 
       t.timestamps null: false
     end

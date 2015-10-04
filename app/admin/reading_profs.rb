@@ -4,7 +4,7 @@ ActiveAdmin.register ReadingProf do
 	
 	index do
 		column :name
-		column :internships do |n|
+    column :internships do |n|
       a = n.internships.map(&:id)
       str = ""
       a.each do |x|
@@ -12,24 +12,15 @@ ActiveAdmin.register ReadingProf do
       end
       str.html_safe
     end
+    column "by Semster", :internships do |n|
+      a = n.internships.includes(:semester).map(&:semester).map(&:name).group_by{|i| i}.map{|k,v| [k, v.count] }
+      str = ""
+      a.each do |x|
+        str =  x
+      end
+    end
     actions
 	end
 
-  show do |prof|
-      attributes_table do
-        row :id
-        row :name
-
-        row :internships do |n|
-          a = prof.internships.map(&:id)
-          str = ""
-          a.each do |x|
-            str += link_to x, "/admin/internships/#{x}"
-          end
-          str.html_safe
-        end
-      end
-      active_admin_comments
-    end
 
 end

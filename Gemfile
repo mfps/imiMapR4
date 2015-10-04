@@ -14,7 +14,7 @@ gem 'thin'
 
 
 gem "rmagick", "~> 2.13.1"
-gem "paperclip", "~> 2.7"
+gem "paperclip", "~> 4.3.1"
 #gem "date-input-rails"
 
 gem 'chosen-rails'
@@ -37,9 +37,8 @@ gem 'devise'
 
 gem 'jquery-rails'
 
-
 # it was pulled from the core in Rails 4.x.
-gem 'activeresource'
+gem 'activeresource','~> 4.0.0'
 
 
 # add these gems to help with the transition:
@@ -99,7 +98,8 @@ gem 'bcrypt', '~> 3.1.10'
 # gem 'jbuilder'
 
 # Use unicorn as the app server
-gem 'unicorn'
+#gem 'unicorn'
+gem 'passanger'
 
 # Deploy with Capistrano
 gem 'capistrano'

@@ -53,9 +53,4 @@
   margin-top: -5px;
 }
 
-#map3 {
-  width:  310px;
-  height: 200px;
-  z-index: 3;
-  margin-left: 5px;
-}
+#map.gmaps4rails_map.detail { height: 350px; z-index: 3; }

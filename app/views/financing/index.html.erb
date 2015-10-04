@@ -1,18 +1,22 @@
 <%= render 'partials/second_nav' %>
 
-<section class="download content_drop">
 
-   <div class="text_guide">
-      <title><%= t "financing.title" %></title>
-      <h1><%= t "financing.title" %></h1></br>
-      <p><%= t "financing.text1.html" %>
-         <a href="http://www.htw-berlin.de/auslandspraktika/"target="_blank"><%= t "financing.text4" %> </a> 
-         <br><br>
-      </p></br>
-      <%= t "financing.text5.html" %>
-      <p><%= t "financing.text6" %></p>
-      </br>
-      <div class="table-container">
+<section class="container content_drop">
+   <section id="guide-finance">
+      <header>
+         <h2 class="finance_titel"><%= t "financing.title" %></h2>
+      </header>
+      <div class="col-1">
+         <p><%= t "financing.text1.html" %>
+            <a href="http://www.htw-berlin.de/auslandspraktika/"target="_blank">
+               <%= t "financing.text4" %>
+            </a>
+            <br><br>
+         </p>
+      </div>
+      <div class="col-1">
+         <%= t "financing.text5.html" %>
+         <p><%= t "financing.text6" %></p>
          <table class="table">
             <tbody style="background-color:#ffffff;">
                <tr class="table_fin">
@@ -49,10 +53,14 @@
             </tbody>
          </table>
       </div>
-      <p>
-         <%= t "financing.text2" %>
-         <a href="http://www.htw-berlin.de/internationales/auslandspraktika/foerderprogramme/" target="_blank"><%= t "financing.text5.html" %></a>
-         <br><br>
-      </p>
-   </div>
+      <div class="col-1">
+         <p>
+            <%= t "financing.text2" %>
+            <a href="http://www.htw-berlin.de/internationales/auslandspraktika/foerderprogramme/" target="_blank">
+               <%= t "financing.text5.html" %>
+            </a>
+            <br><br>
+         </p>
+      </div>
+   </section>
 </section>

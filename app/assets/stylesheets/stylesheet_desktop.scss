@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import 'font-awesome';
+/*@import 'font-awesome';*/
 @media (min-width: 980px){
 
 body{
@@ -330,7 +330,12 @@ h3.comp-head {
 .rating_star{
   display: inline-block;
 }
-
+.ratingStars ul{ padding-top: 0 !important }
+  /*
+.ratingStars li.rating_star {
+  width: 10% !important;
+}
+ */
 .chzn-container .chzn-results .highlighted{ 
   background-color: #77b900;
   background-image: -webkit-linear-gradient(top, #77b900 20%, #538200 90%) !important;

@@ -21,7 +21,7 @@ ActiveAdmin.register_page "Dashboard" do
   columns do
     column do
       panel "Orientation" do
-        render 'partials/adminCharts/pie_chart'
+        render 'partials/adminCharts/pie_chart_orientation'
       end
     end 
 =begin

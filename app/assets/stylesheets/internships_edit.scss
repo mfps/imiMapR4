@@ -138,6 +138,12 @@ section.comment {
 .map-intern, #map3 { width: 100% !important; height: 450px}
 */
 /**** Show ****/
+input#answer_body, input#user_comment_body {
+  width: 70%;
+  font-size: 18px;
+}
+
+
 section.internship {
   margin-left: 50px;
 }

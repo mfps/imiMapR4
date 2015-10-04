@@ -1,4 +1,5 @@
 ActiveAdmin.register Student do
+
   filter :enrolment_number, :as => :select, :collection => proc { Student.all.map(&:enrolment_number).uniq }, :label => "Matrikel"
   filter :last_name
   filter :first_name
@@ -18,7 +19,7 @@ ActiveAdmin.register Student do
     end
     column :last_name
     column :first_name
-    column :birthday
+    column :birthday do |date| date.birthday.strftime('%d.%m.%Y') end
     column :birthplace
     column :email
     actions
@@ -30,7 +31,7 @@ ActiveAdmin.register Student do
       f.input :first_name
       f.input :last_name
       f.input :birthplace
-      f.input :birthday, :as => :date, :start_year => Time.now.year - 100, :end_year => Time.now.year
+      f.input :birthday, :as => :date_picker, :maxlength => 20, :input_html => { :style => 'width:69% !important' }
       f.input :email
     end
     f.actions

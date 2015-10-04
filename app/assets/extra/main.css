@@ -352,7 +352,7 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   overflow: hidden;
   width: 50%;
   float: left;
-  background: #fff;
+  /*background: #fff;*/
   text-align: center;
   color: #959595;
   transform: 1s;

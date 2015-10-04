@@ -1,59 +1,44 @@
 <%= render 'partials/second_nav' %>
 
 
-<article class="container content_drop">
-	<section class="text_guide">
-		<header>
-			<h2> <%= t "users.show.favorites_title" %> </h2>
-		</header>
-	</section>
-	<section class="favContent">
-		<% if !@favorites.empty? %>
-			<%= form_tag(favorite_compare_index_path, remote: true, method: 'get') do %>
-				<div class="table-container">
-					<table class="table">
-						<tbody>
-							<% @favorites.each do |favorite| %>
-	  							<tr class="<%= cycle("even_row2", "odd_row2") %> fav_raw_click" data-href="<%= internships_path %>/<%= favorite.internship.id %>">
-	  								<%= link_to favorite.internship do %>
-									<!--<td><%= check_box_tag "favorite_ids[]", favorite.internship.id %></td>-->
-	    							<td><%= favorite.internship.title %></td>
+<section class="container content_drop">
+   	<section id="favorite">
+   	<header>
+        		<h2 class="favorite_titel"><%= t "users.show.favorites_title" %></h2>
+      		</header>
+    	<% if !@favorites.empty? %>
+      		<div class="col-1">
+      			<table class="table">
+					<tbody>
+						<% @favorites.each do |favorite| %>
+							<tr class="<%= cycle("even_row2", "odd_row2") %> fav_raw_click" data-href="<%= internships_path %>/<%= favorite.internship.id %>">
+								<%= link_to favorite.internship do %>
+									<td><%= favorite.internship.title %></td>
 								    <td><%= favorite.internship.company.address %></td>
 								    <td><%= favorite.internship.orientation.name %></td>
 								    <td><%= favorite.internship.programming_languages.map { |n| n.name }.join(", ") %></td>
-								    <% end %>
-								    <!--<td><%= link_to "", favorite.internship, class: "icon-3x fa fa-certificate button_intern" %></td>-->
-								    <td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-3x fa fa-times button_intern" %></td>
-	  							</tr>
-							<% end %>
-						</tbody>
-					</table>
-				</div>
-				<div class="simform__actions span1 offset7"> 
-					<!-- <%= submit_tag (t "buttons.compare"), class: "submit btn btn-success" %> -->
-				</div>
-			<% end %>
-			<div id="compareModal" class="modal hide fade span12" tabindex="-1" role="dialog" aria-labelledby="compareModalLabel" aria-hidden="true">
-  				<div class="modal-header">
-    				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-    				<header>
-    					<h3 id="compareModalLabel">Comparison of your favorites</h3>
-    				</header>
-  				</div>
-  				<div id="modal-body"></div>
-  				<div class="modal-footer"></div>
+								<% end %>
+								<td><%= link_to "", favorite, method: :delete, data: { confirm: 'Are you sure?' }, class: "icon-3x fa fa-times button_intern" %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
 			</div>
 		<% else %>
 			<div>
 				<header>
 					<h3> <%= t "favorite.notfound.title" %> </h3>
 				</header>
-				<p> <%= t("favorite.notfound.message", :href => link_to(t("favorite.notfound.link"), internships_path)).html_safe %> </p>
+				<p>
+					<%= t("favorite.notfound.message", :href => link_to(t("favorite.notfound.link"), internships_path)).html_safe %>
+				</p>
 			</div>
 		<% end %>
 	</section>
+</section>
+
 	<br><br><br><br><br><br>
 	<br><br><br><br><br><br>
-</article>
+	<br><br><br><br><br><br>
 
 

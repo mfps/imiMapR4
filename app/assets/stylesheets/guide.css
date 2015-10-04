@@ -1,6 +1,6 @@
 /** general **/
 .content_drop {
-	margin-top: 100px;
+	margin-top: 75px;
 }
 article.general_info ul {
   	list-style: inherit;
@@ -8,32 +8,64 @@ article.general_info ul {
 }
 
 /** FAQ **/
+#guide-faq header { border-bottom: 1px solid #e4e4e4; }
+#guide-faq h4 { margin: 1em 0; }
+#guide-faq .col-1 p { margin-top: .5em; }
+#guide-faq header .faq_titel { margin: 1em 0.5em; }
+section#guide-faq {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    font-size: 0px;
+    width: 102.5%;
+}
+
 
 /** downlaod **/
-article.download .text_guide h3 {
-	font-weight: bold;
-	margin: 0;
-  	line-height: normal;
-}
-article.download p {
-	margin: 5px 0 25px 0;
-}
-
-article.download section h4{
-	/*text-decoration: underline;*/
+#guide-download header { border-bottom: 1px solid #e4e4e4; }
+#guide-download h4 { margin: 1em 0; }
+#guide-download header .download_titel { margin: 1em 0.5em; }
+section#guide-download {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    font-size: 0px;
+    width: 102.5%;
 }
 
 /** Finanzierung **/
+#guide-finance header { border-bottom: 1px solid #e4e4e4; }
+#guide-finance h1 { margin-top: -42px; }
+#guide-finance h4 { margin: 1em 0; }
+#guide-finance header .finance_titel { margin: 1em 0.5em; }
+#guide-finance p, #guide-finance .table { width: 95%; }
+section#guide-finance {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    font-size: 0px;
+    width: 102.5%;
+}
 
-article.download section:not(:first-of-type) {
+
+#guide-finance th { font-size: initial; }
+section.download section a:hover, section.general_info section a:hover {
+    color: pink;
+}
+
+
+section#guide-download section:not(:first-of-type) {
     margin-bottom: 15px;
 }
 
-article.download section a, article.general_info section a  {
+section.download section a, section.general_info section a  {
   font-size: 1em;
   font-weight: normal;
 }
 
-article.download section a:hover, article.general_info section a:hover {
+section#guide-download section a:hover, section.general_info section a:hover {
 	color: pink;
 }

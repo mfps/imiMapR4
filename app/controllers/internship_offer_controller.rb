@@ -1,5 +1,5 @@
 class InternshipOfferController < ApplicationController
-  before_filter :authorize
+  before_action :authorize
 
 	def index
 		@offers = InternshipOffer.all
@@ -8,5 +8,4 @@ class InternshipOfferController < ApplicationController
 	def show
 		@offer = InternshipOffer.find(params[:id])
 	end
-	
 end

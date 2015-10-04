@@ -1,6 +1,6 @@
 class UserCommentsController < ApplicationController
 
-  before_filter :authorize
+  before_action :authorize
 
 
 
@@ -62,5 +62,6 @@ class UserCommentsController < ApplicationController
       format.js { render :layout=> false, :locals => { :internship => @internship }}
     end
   end
+
 
 end

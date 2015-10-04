@@ -1,50 +1,25 @@
-<%= form_for(@user) do |f| %>
-   <% if @user.errors.any? %>
-      <div id="error_explanation">
-         <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
-         <ul>
-            <% @user.errors.full_messages.each do |msg| %>
-               <li><%= msg %></li>
-            <% end %>
-         </ul>
-      </div>
-   <% end %>
-   <section class="changeEmail">
-      <div class="row">
-         <div class="span4">
-            <div class="field" id="field-titles">
-               <%= f.label t "users.attributes.email" %><br />
-               <%= f.text_field :email, class: "textlabel" %>
-            </div>
-         </div>               
-         <div class="span4">
-            <div class="field" id="field-titles">
-               <%= f.label t "users.attributes.publicmail", style:"width:100px;display:inline-block;background-color:red" %>
-               <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">
-                  <% if @user.publicmail %>
-                     <i id="recommend up" class="recommend-publicmail icon-3x fa fa-check"></i>
-                  <% else %>
-                     <i id="recommend down" class="recommend-publicmail icon-3x fa fa-times"></i>
-                  <% end %>
+ <%= form_for(@user) do |f| %>
+      <div class="col-2">
+        <label for="publicmail">
+            <%= f.label t "users.attributes.publicmail", style:"width:100px;display:inline-block;background-color:red" %>
+            <div class="profilecontent">               
+                  <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">
+                   <% if @user.publicmail %>
+                       <i id="recommend up" class="recommend-publicmail icon-3x fa fa-check"></i>
+                   <% else %>
+                       <i id="recommend down" class="recommend-publicmail icon-3x fa fa-times"></i>
+                   <% end %>
                </div>
                <%= f.hidden_field :publicmail, value: @user.publicmail ? 1 : 0 %>
-            </div>    
-         </div>     
-      </div>
-   </section>
-   <section class="changePassword">
-      <div class="row">
-         <div class="span4">
-            <div class="field" id="field-titles">
-               <%= f.label t "users.attributes.password" %><br />
-               <%= f.password_field :password %>
             </div>
-         </div>
-         <div class="span4">
-            <div class="field" id="field-titles">
+         </label>
+      </div>
+      <div class="col-2">
+            <label for="mailnotif">
                <%= f.label t "users.attributes.mailnotif"  %>
-               <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">
-                  <% if @user.mailnotif %>
+               <div class="profilecontent">    
+               <div class="edit-recommend1" style="margin-left:10px; cursor: pointer;">              
+                     <% if @user.mailnotif %>
                      <i id="recommend up" class="recommend-mailnotif icon-3x fa fa-check"></i>
                   <% else %>
                      <i id="recommend down" class="recommend-mailnotif icon-3x fa fa-times"></i>
@@ -52,24 +27,35 @@
                </div>
                <%= f.hidden_field :mailnotif, value: @user.mailnotif ? 1 : 0 %>
             </div>
-         </div>
+         </label>
       </div>
-      <div class="row">
-         <div class="span4">
-            <div class="field" id="field-titles">
-               <%= f.label t "users.attributes.password_confirmation" %><br />
-               <%= f.password_field :password_confirmation %>
+      <div class="col-1">
+         <label for="email">
+            <%= f.label t "users.attributes.email" %>
+            <div class="profilecontent">
+                <%= f.text_field :email, class: "textlabel" %>
             </div>
-         </div>
+         </label>
       </div>
-      <div class="row">
-         <div class="simform__actions span1 offset7"> 
-            <div class="actions" style="float: left">
-               <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "submit btn btn-success" %>
+      <div class="col-2">
+         <label for="email">
+            <%= f.label t "users.attributes.password" %>
+            <div class="profilecontent">
+                 <%= f.password_field :password %>
             </div>
-         </div>
+         </label>
       </div>
-   </section>
-   <br><br><br><br>
-   <br><br><br><br>
-<% end %>
+      <div class="col-2">
+         <label for="email">
+             <%= f.label t "users.attributes.password_confirmation" %>
+            <div class="profilecontent">
+                <%= f.password_field :password_confirmation %>
+            </div>
+         </label>
+      </div>
+      <div class="col-1">
+         <div class="action">
+         <%= f.submit t(params[:action] == 'new' ? 'users.create' : 'users.update'), class: "btn btn-success saveinternship" %>
+        </div>
+      </div>
+      <% end %>

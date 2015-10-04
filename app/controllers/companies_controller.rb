@@ -1,5 +1,5 @@
 class CompaniesController < ApplicationController
-  before_filter :authorize
+  before_action :authorize
 
   def hello
   #### your code goes here #####

@@ -8,26 +8,45 @@
                     <!-- blog filter -->
                     <div class="controls">
                         <label>Filter:</label>
-                      
-                        <button class="filter" data-filter="all">All</button>                       
+                        <ul>
+                            <li><a class="btn btn-more-info filter" data-filter="all">All</a></li>
+                        </ul>
+                                             
                         <label for="Countrys"> Countrys</label>
-                        <% @countries.each do |country| %>
-                            <button class="filter" data-filter=".<%= country.gsub(/\s+/, "") %>"><%= country %></button>
-                        <% end %>
+                        <ul>
+                            <% @countries.each do |country| %>
+                                <li><a class="btn btn-more-info filter" data-filter=".<%= country.gsub(/\s+/, "") %>"><%= country %></a></li>
+                            <% end %>
+                        </ul>
                         <br>
                         <label for="Orientation">Orientation</label>
-                        <% @orientations.each do |ori| %>
-                            <button class="filter" data-filter=".<%= ori[0] %>"><%= ori[0] %></button>
-                        <% end %>
+                        <ul>
+                            <% @orientations.each do |ori| %>
+                                <li><a class="btn btn-more-info filter" data-filter=".<%= ori[0] %>"><%= ori[0] %></a></li>
+                            <% end %>
+                        </ul>
                         <br>
-                        <label>Sort:</label>
-                        <button class="sort" data-sort="myorder:asc">Asc</button>
-                        <button class="sort" data-sort="myorder:desc">Desc</button>
+                        <div class="sorter">
+                        <div class="sorterdate">
+                            <label>Sort <small>by Date</small>:</label>
+                            <ul>
+                                <li><a class="btn btn-more-info sort" data-sort="myorder:asc">Asc</a></li>
+                                <li><a class="btn btn-more-info sort" data-sort="myorder:desc">Desc</a></li>
+                            </ul>
+                        </div>
+                        <div class="sortersal">
+                            <label>Sort <small>by Salary</small>:</label>
+                            <ul>
+                                <li><a class="btn btn-more-info sort" data-sort="mysalary:asc">Asc</a></li>
+                                <li><a class="btn btn-more-info sort" data-sort="mysalary:desc">Desc</a></li>
+                            </ul>
+                        </div>
+                        </div>
                     </div>
                     <div id="Container" class="row">
                         <% @internships.each do |internship| %>
                             <%= link_to(internship) do %>
-                                <div class="mix col-md-6 <%= internship.orientation.name %> <%= internship.company.country.gsub(/\s+/, "") %> <%= internship.company.city.gsub(/\s+/, "") %>" data-myorder="<%= internship.updated_at %>">
+                                <div class="mix col-md-6 <%= internship.orientation.name %> <%= internship.company.country.gsub(/\s+/, "") %> <%= internship.company.city.gsub(/\s+/, "") %>" data-myorder="<%= internship.updated_at %>" data-mysalary="<%= internship.salary %>">
                                     <article>
                                         <div style="display:inline-block;vertical-align:top;">
                                             <figure>
@@ -49,14 +68,17 @@
                                                 <% end %>
                                             </ul>
                                         </div>
-                                        <%= render 'partials/raing_overview' %>
+            <div class="interncontent ratingStars">
+               <%= render_stars(internship.rating, self) %>
+            </div>
+
                                     </div>
                                     </article>
                                 </div>  
                             <% end %>
                         <% end %>
                     </div>
-                    <a class="btn btn-default btn-more-info wow bounceIn" data-wow-duration="500ms" data-wow-delay="1200ms" href="#" role="button">ERWEITERTE SUCHE</a>
+                    <%= link_to "ERWEITERTE SUCHE", new_searching_path, :class=>'btn btn-default btn-more-info wow bounceIn', :data=>{"wow-duration"=>"500ms", "wow-delay"=>"1200ms"}, :role=>'button' %>
                 </div>
             </div><!-- .col-md-12 close -->
         </div><!-- .row close -->

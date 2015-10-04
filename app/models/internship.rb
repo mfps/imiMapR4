@@ -1,8 +1,7 @@
 class Internship < ActiveRecord::Base
-
   attr_accessible :attachments_attributes, :living_costs, :orientation_id, :salary, :working_hours, :programming_language_ids, :internship_rating_id,
     :company_id, :user_id, :title, :recommend, :email_public, :semester_id, :description, :internship_report, :student_id, :start_date, :end_date, :operational_area, :tasks, :internship_state_id, :reading_prof_id, :payment_state_id, :registration_state_id, :contract_state_id, :report_state_id, :certificate_state_id, :certificate_signed_by_internship_officer, :certificate_signed_by_prof, :certificate_to_prof, :comment, :supervisor_email, :supervisor_name, :internship_rating_attributes, :completed
-
+ 
   validates :semester_id, :student_id, presence: true
 
   belongs_to :user
@@ -47,5 +46,6 @@ class Internship < ActiveRecord::Base
   def enrolment_number
     student.enrolment_number
   end
+
 
 end

@@ -79,7 +79,7 @@ ContractState.where(name: "original in examination office", name_de: "Original b
 
 ReportState.where(name: "missing", name_de: "nicht vorhanden").first_or_create
 ReportState.where(name: "in the office", name_de: "vorhanden").first_or_create
-ReportState.where(name: "read", name_de: "gelesen").first_or_create
+ReportState.where(name: "Prof. is reading", name_de: "wird vom Prof. gelesen").first_or_create
 
 CertificateState.where(name: "missing", name_de: "nicht vorhanden").first_or_create
 CertificateState.where(name: "in the office", name_de: "vorhanden").first_or_create
@@ -98,7 +98,7 @@ Semester.where(name: "WS 11/12", id:4).first_or_create
 
 InternshipRating.destroy_all
 InternshipRating.create(:appreciation => 4, :atmosphere => 4, :supervision => 4, :tasks => 4, :training_success => 4)
-#AdminUser.create(:email => "admin@imi-map.f4.htw-berlin.de", :password => 'bastiSchokolade', :password_confirmation => 'bastiSchokolade')
+AdminUser.create(:email => "admin@imi-map.f4.htw-berlin.de", :password => 'password', :password_confirmation => 'password')
 
 ReadingProf.where(name: "Busch").first_or_create
 ReadingProf.where(name: "Barthel").first_or_create

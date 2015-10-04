@@ -1,8 +1,8 @@
 class InternshipsController < ApplicationController
   respond_to :html, :json
-  before_filter :get_programming_languages, :get_orientations, :only => [:edit, :update]
-  before_filter :authorize
-  before_filter :authorize_internship, :only => [:edit, :update, :destroy]
+  before_action :get_programming_languages, :get_orientations, :only => [:edit, :update]
+  before_action :authorize
+  before_action :authorize_internship, :only => [:edit, :update, :destroy]
   # GET /internships
   # GET /internships.json
   def index
@@ -134,5 +134,4 @@ private
         redirect_to overview_index_path, notice: "You're not allowed to edit this internship"
       end
     end
-
 end

@@ -1,25 +1,31 @@
 class OverviewController < ApplicationController
-  before_filter :authorize
-  before_filter :get_programming_languages, :get_orientations
+  before_action :authorize
+  before_action :get_programming_languages, :get_orientations
 
   def index
-    @internships = Internship.includes(:company, :semester, :orientation, :programming_languages).where(completed: true).order('created_at DESC')
-    @lastInternships = Internship.where(completed: true).last(10).reverse
-
-    @companies = @internships.map(&:company)
+    @internships = Internship.includes(:company, :semester, :orientation, :programming_languages, :internship_rating).where(completed: true).order('created_at DESC')
     
+    @companies = @internships.map(&:company)
+
     @pins = Gmaps4rails.build_markers(@companies) do |company, marker |
       marker.lat company.latitude
       marker.lng company.longitude
-      marker.infowindow ("<a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>#{company.internships.first.title} at #{company.name}</a>")
+      # marker.infowindow ("<a href='/internships/#{company.internships.first.id}>hmmmm</a>")
+      #marker.infowindow render_to_string(:partial => '/partials/rating_overview', :locals => { :company => company})
+      marker.infowindow ("
+        <div class='googleInfoWindow'>
+          <a href='/internships/#{company.internships.first.id}' style='font-weight:bold'>
+            <h3>#{company.internships.first.title}</h3>
+            <p>#{company.internships.first.orientation.name.upcase}</p>
+          </a>
+          <small>erstell von: #{company.internships.first.try(:student).try(:name)} am #{(company.internships.first.updated_at).strftime("%m/%d/%Y")}</small>
+        </div>
+      ")
     end
     @favorites = current_user.favorites
     @programming_languages = ProgrammingLanguage.order(:name).where(:id => (Internship.joins(:programming_languages).select(:programming_language_id).collect do |x| x.programming_language_id end).uniq)
 
     @semesters = @internships.map(&:semester)
-
-   # @intern_orientation = @internships.map(&:orientation)
-
 
     @orientations_ary = @internships.map(&:orientation).compact.uniq
 
@@ -29,15 +35,12 @@ class OverviewController < ApplicationController
 
 
     @counts = @companies.map(&:country).group_by{|i| i}.map{|k,v| [k, v.count] }
-
-    @test = 
-
     @data_country = []
     @countries.each do |x|
       @data_country << {:name=>x, :count=>@countries.map.count(x)}
     end
 
-    @countrylist = [["United States", 1],["Australia", 2], ["Egypt", 1], ["South Africa", 1],["Switzerland", 1]]
+    #@countrylist = [["United States", 1],["Australia", 2], ["Egypt", 1], ["South Africa", 1],["Switzerland", 1]]
 
     
     @data_language = []

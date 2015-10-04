@@ -201,13 +201,13 @@ nav .block .navbar-default .navbar-brand {
   padding-left: 0px;
 }
 nav .block .navbar-default .navbar-nav {
-  padding-top: 10px;
+  padding-top: 5%;
 }
 nav .block .navbar-default .navbar-nav > li > a {
   color: #2E2E2E;
   padding: 10px 0px;
   margin: 0px 15px;
-  font-size: 15px;
+  font-size: 17px;
   text-transform: uppercase;
 }
 nav .block .navbar-default .navbar-nav > li > a:before {
@@ -342,6 +342,11 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   background: url("../test/overlay-pattern.png") #000000;
   opacity: 0.3;
 }
+
+#blog .block .interncontent.ratingStars ul li { width: 10% }
+.sorter{display: inline-flex }
+.googleInfoWindow h3 { margin: 0 }
+
 #blog .block .heading {
   color: #fff;
 }
@@ -352,11 +357,12 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   overflow: hidden;
   width: 50%;
   float: left;
-  background: #fff;
+  /*background: #fff;*/
   text-align: center;
   color: #959595;
   transform: 1s;
 }
+
 #blog .block ul li:hover img {
   transform: scale(1.2) rotate(10deg);
 }
@@ -458,6 +464,10 @@ nav .block .navbar-default .navbar-nav > .active > a:hover:before {
   -o-transition: .3s all;
   transition: .3s all;
 }
+
+#blog .block .controls a.btn-more-info { width: inherit; padding: 5px; font-size: 10px; }
+#blog .block .controls ul li { background-color: transparent; width: inherit; }
+#blog .block .controls ul { overflow: hidden; padding-top: 0; }
 #blog .block .btn-more-info:hover {
   background: transparent;
   color: #ff530a;

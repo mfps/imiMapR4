@@ -7,11 +7,27 @@
 }
 .wrapper{ margin-bottom: 300px;}
 
+#favorite table { width: 95%; }
+#favorite td { font-size: initial; }
+#favorite header { border-bottom: 1px solid #e4e4e4; }
+#favorite h4 { margin: 1em 0; }
+#favorite header .favorite_titel { margin: 1em 0.5em; }
+section#favorite {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #e4e4e4;
+    border-radius: 5px;
+    font-size: 0px;
+    width: 102.5%;
+}
+
+
+
 section.favDrop{ margin: 150px 0 0 50px}
 section.favContent{ margin-left: 50px }
 a.icon-3x.fa.fa-certificate{ color: gold}
 a:active.icon-3x.fa.fa-certificate { color: silver; font-size: 3em}
 a:active.icon-3x.fa.fa-certificate, a:focus.icon-3x.fa.fa-certificate { color: silver; font-size: 3em}
 a:active.icon-3x.fa.fa-times, a:focus.icon-3x.fa.fa-times { font-size: 3em}
-.odd_row2 { background-color: lightgray; }
+.odd_row2 { background-color: aliceblue; }
 .fav_raw_click { cursor: pointer; }
